@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.Shashank02051997:FancyGifDialog-Android:1.5@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/transforms-3/f9d3ea51e9afed3bd81ae44b1890a9ef/transformed/jetified-FancyGifDialog-Android-1.5/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/transforms-3/f9d3ea51e9afed3bd81ae44b1890a9ef/transformed/jetified-FancyGifDialog-Android-1.5/res" />
+      <root url="file://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/transforms-3/f9d3ea51e9afed3bd81ae44b1890a9ef/transformed/jetified-FancyGifDialog-Android-1.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/modules-2/files-2.1/com.github.Shashank02051997/FancyGifDialog-Android/1.5/e788e14aaae14baf7aa7e5852b475cfc58f4df66/FancyGifDialog-Android-1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "497996510697",
+    "firebase_url": "https://appbank-73eb4-default-rtdb.firebaseio.com",
+    "project_id": "appbank-73eb4",
+    "storage_bucket": "appbank-73eb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497996510697:android:9864dd12a133e8a5fa8778",
+        "android_client_info": {
+          "package_name": "com.kim.android.MobileBanking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9kk7xPGMLsKkeD5R1f-9cCE9eE6SzfcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497996510697:android:013302f775435d2bfa8778",
+        "android_client_info": {
+          "package_name": "com.kim.appbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9kk7xPGMLsKkeD5R1f-9cCE9eE6SzfcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497996510697:android:cb13b7ff9eeee669fa8778",
+        "android_client_info": {
+          "package_name": "com.kim.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9kk7xPGMLsKkeD5R1f-9cCE9eE6SzfcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497996510697-elig2u6s1et77frqvso81l3na2mmg0dc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/transforms-3/a131e3dfc1db21326c545302c65d04d6/transformed/jetified-tensorflow-lite-gpu-0.0.0-nightly/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../eigenfaces/FinalVersion/.gradle/caches/transforms-3/a131e3dfc1db21326c545302c65d04d6/transformed/jetified-tensorflow-lite-gpu-0.0.0-nightly/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
