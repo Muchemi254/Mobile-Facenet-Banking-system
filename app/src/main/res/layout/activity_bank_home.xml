@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BankHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background= "@drawable/gradient_drawable"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/gradient_drawable2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mzalendo Bank"
+                android:textSize="23sp"
+                android:gravity="center_vertical"
+                android:textColor="#294B7E"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="210sp"
+                android:elevation="50dp"
+                app:cardCornerRadius="2dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background= "@drawable/gradient_drawable3"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:scaleType="fitCenter"
+                            app:tint="#3F6CAF"
+                            android:src="@drawable/ic_baseline_account_balance_24"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Welcome"
+                                android:textStyle="bold"
+                                android:textSize="29sp"
+                                android:textColor="#3F6CAF"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Brian Kimani"
+                                android:textSize="18sp"
+                                android:textColor="#3F6CAF"
+                                android:gravity="center" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:text="Balance"
+                                    android:textColor="#3F6CAF"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="left"
+                                    android:textSize="17sp"
+                                    android:textColor="#3F6CAF"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="20000"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="10dp"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background= "@drawable/gradient_drawable2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_baseline_history_24"
+                            app:tint="#3F6CAF" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#062C65"
+                            android:text="Transaction History"
+                            />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/transaction_history_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0000"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150sp"
+                app:cardCornerRadius="10dp"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background= "@drawable/gradient_drawable2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            app:tint="#3F6CAF"
+                            android:src="@drawable/ic_baseline_attach_money_24"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="#0E3570"
+                            android:text="Send Money"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/send_money_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#0000"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

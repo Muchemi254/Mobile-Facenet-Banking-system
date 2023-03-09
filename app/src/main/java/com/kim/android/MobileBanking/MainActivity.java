@@ -3,6 +3,8 @@ package com.kim.android.MobileBanking;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -118,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
         detectionTextView = findViewById(R.id.detection_text);
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+        //hide register button on face authentication page
         Button addBtn = findViewById(R.id.add_btn);
         String launchSource = getIntent().getStringExtra("launch_source");
         if (launchSource != null && launchSource.equals("first_activity")) {
@@ -129,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
        // switchCamBtn.setOnClickListener((view -> switchCamera()));
 
         loadModel();
+        //get user recognition info saved in the database
         loadRecogntion();
         loadName();
     }
@@ -158,9 +162,7 @@ public class MainActivity extends AppCompatActivity {
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference recognitionRef = database.getReference().child("users").child(currentuser).child("recognition_info");
-
-
-// Add a value event listener to the reference
+        // Add a value event listener to the reference
         recognitionRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -323,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
         return previewView.getDisplay().getRotation();
     }
 
-    private void switchCamera() {
+   /* private void switchCamera() {
         if (lensFacing == CameraSelector.LENS_FACING_BACK) {
             lensFacing = CameraSelector.LENS_FACING_FRONT;
             flipX = true;
@@ -334,7 +336,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(cameraProvider != null) cameraProvider.unbindAll();
         startCamera();
-    }
+    }*/
 
     /** Face detection processor */
     @SuppressLint("UnsafeOptInUsageError")
@@ -497,14 +499,25 @@ public class MainActivity extends AppCompatActivity {
                 final String name = nearest.first;
                 distance = nearest.second;
 
-                if(distance<0.700f) //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
+                //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
+                if(distance<0.800f){
+                    loadActivity();
                     return name;
+
+                }
+
                 else
                     return "unknown";
             }
         }
 
         return null;
+    }
+
+    private void loadActivity() {
+        Intent intent = new Intent(MainActivity.this, BankHome.class);
+        finish();
+        startActivity(intent);
     }
 
     //Compare Faces by distance between face embeddings
