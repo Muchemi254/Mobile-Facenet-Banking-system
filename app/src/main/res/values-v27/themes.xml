@@ -12,5 +12,6 @@
         <item name="android:statusBarColor">#3580D3</item>
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">#3580D3</item>
+        <item name="fontFamily">@font/calibri</item>
     </style>
 </resources>

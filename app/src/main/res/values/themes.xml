@@ -12,5 +12,6 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor" >#3580D3</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+        <item name="fontFamily">@font/calibri</item>
     </style>
 </resources>

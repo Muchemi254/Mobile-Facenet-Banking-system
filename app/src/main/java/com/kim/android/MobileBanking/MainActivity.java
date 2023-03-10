@@ -453,13 +453,44 @@ public class MainActivity extends AppCompatActivity {
     private Runnable authFailedRunnable = new Runnable() {
         @Override
         public void run() {
+            if (!isFinishing()) {
             // Display the authentication failed alert
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setMessage("Authentication failed");
-            builder.setPositiveButton("OK", null);
+            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    onBackPressed();
+                }
+            });
+            builder.setPositiveButton("try again", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    recreate();
+                }
+            });
+            builder.setCancelable(false);
+            unbindAllCameraUseCases();
+            releaseCamera();
             builder.show();
         }
+        }
     };
+
+    @Override
+    public void onBackPressed() {
+        // Get the number of activities in the back stack
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            // If there is no activity in the back stack, let the system handle the back button press
+            super.onBackPressed();
+        } else {
+            // If there is at least one activity in the back stack, go back to the previous activity
+            getFragmentManager().popBackStack();
+        }
+    }
+
 
 
     public String recognizeImage(final Bitmap bitmap) {

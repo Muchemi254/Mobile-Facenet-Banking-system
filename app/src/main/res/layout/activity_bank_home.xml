@@ -17,7 +17,7 @@
             android:orientation="horizontal"
             android:background="#A5D0F6">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="Mzalendo Bank"
                 android:textSize="19dp"
@@ -36,42 +36,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background= "@drawable/gradient_drawable3"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:layout_margin="10dp"
                         android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:scaleType="fitCenter"
-                            app:tint="#3F6CAF"
-                            android:src="@drawable/ic_baseline_account_balance_24"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="vertical">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:textStyle="bold"
-                                android:textSize="29sp"
-                                android:textColor="#3F6CAF"
-                                android:gravity="center"
-                                android:layout_weight="1"/>
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:textStyle="bold"
                                 android:textSize="29sp"
                                 android:text="Welcome"
                                 android:textColor="#3F6CAF"
@@ -86,8 +65,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="2"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/ic_baseline_face_6_24"
+                                    android:src="@drawable/ic_baseline_account_circle_24"
                                     app:tint="#3F6CAF" />
 
                                 <TextView
@@ -108,7 +86,34 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:layout_marginLeft="10dp"
+                                    android:src="@drawable/ic_baseline_credit_card_24"
+                                    app:tint="#3F6CAF" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="AccNo:"
+                                    android:layout_weight="1"
+                                    android:textColor="#3F6CAF"
+                                    android:textSize="16sp" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:textSize="17sp"
+                                    android:textColor="#3F6CAF"
+                                    android:text="8741062953"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:src="@drawable/ic_baseline_account_balance_wallet_24"
                                     app:tint="#3F6CAF" />
                                 <TextView
@@ -118,8 +123,7 @@
                                     android:text="Balance:"
                                     android:layout_weight="1"
                                     android:textColor="#3F6CAF"
-                                    android:textSize="16sp"
-                                    android:textStyle="bold"/>
+                                    android:textSize="16sp"/>
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -129,14 +133,7 @@
                                     android:textColor="#3F6CAF"
                                     android:text="20000"/>
                             </LinearLayout>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:textStyle="bold"
-                                android:textSize="29sp"
-                                android:textColor="#3F6CAF"
-                                android:gravity="center"
-                                android:layout_weight="1"/>
+
 
 
 
@@ -144,7 +141,6 @@
 
                     </LinearLayout>
 
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,7 +148,7 @@
             android:orientation="horizontal">
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="150sp"
+                android:layout_height="130sp"
                 app:cardCornerRadius="5dp"
                 android:layout_weight="1"
                 android:layout_margin="8dp">
@@ -169,7 +165,6 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:scaleType="fitCenter"
-                            android:layout_margin="10dp"
                             android:src="@drawable/ic_baseline_history_24"
                             app:tint="#3F6CAF" />
                         <TextView
@@ -177,10 +172,9 @@
                             android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:gravity="center"
-                            android:textStyle="bold"
                             android:textSize="18sp"
                             android:textColor="#3F6CAF"
-                            android:text="Transaction History"
+                            android:text="Transactions"
                             />
 
                     </LinearLayout>
@@ -198,8 +192,9 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="150sp"
+                android:layout_height="130sp"
                 app:cardCornerRadius="5dp"
+                android:elevation="50dp"
                 android:layout_weight="1"
                 android:layout_margin="8dp">
                 <FrameLayout
@@ -214,7 +209,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:layout_margin="10dp"
                             android:scaleType="fitCenter"
                             app:tint="#3F6CAF"
                             android:src="@drawable/ic_baseline_send_24"/>
@@ -223,7 +217,6 @@
                             android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:gravity="center"
-                            android:textStyle="bold"
                             android:textSize="18sp"
                             android:textColor="#3F6CAF"
                             android:text="Send Money"/>
@@ -241,6 +234,7 @@
                 </FrameLayout>
 
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -277,10 +271,13 @@
                                 android:text="logout"/>
 
                         </LinearLayout>
+
                         <Button
+                            android:id="@+id/logout_btn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#00000000"/>
+                            android:background="#00000000"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </FrameLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -379,11 +376,13 @@
                                 android:text="exit"/>
 
                         </LinearLayout>
+
                         <Button
                             android:id="@+id/exit_btn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#00000000"/>
+                            android:background="#00000000"
+                            tools:ignore="SpeakableTextPresentCheck" />
                     </FrameLayout>
 
                 </androidx.cardview.widget.CardView>
