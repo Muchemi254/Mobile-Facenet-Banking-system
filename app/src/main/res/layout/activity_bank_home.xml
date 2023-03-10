@@ -13,14 +13,17 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@drawable/gradient_drawable2">
+            android:layout_height="41dp"
+            android:orientation="horizontal"
+            android:background="#A5D0F6">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Mzalendo Bank"
-                android:textSize="23sp"
-                android:gravity="center_vertical"
+                android:textSize="19dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:textColor="#294B7E"
                 android:layout_margin="10dp"/>
         </LinearLayout>
@@ -59,30 +62,61 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:text="Welcome"
                                 android:textStyle="bold"
                                 android:textSize="29sp"
                                 android:textColor="#3F6CAF"
                                 android:gravity="center"
                                 android:layout_weight="1"/>
+
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Brian Kimani"
-                                android:textSize="18sp"
+                                android:layout_height="match_parent"
+                                android:textStyle="bold"
+                                android:textSize="29sp"
+                                android:text="Welcome"
                                 android:textColor="#3F6CAF"
-                                android:gravity="center" />
+                                android:gravity="center"
+                                android:layout_weight="1"/>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="2"
+                                    android:layout_marginLeft="10dp"
+                                    android:src="@drawable/ic_baseline_face_6_24"
+                                    app:tint="#3F6CAF" />
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:gravity="right"
-                                    android:text="Balance"
+                                    android:gravity="center_vertical"
+                                    android:textSize="17sp"
+                                    android:textColor="#3F6CAF"
+                                    android:text="Brian Kimani"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:src="@drawable/ic_baseline_account_balance_wallet_24"
+                                    app:tint="#3F6CAF" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="Balance:"
+                                    android:layout_weight="1"
                                     android:textColor="#3F6CAF"
                                     android:textSize="16sp"
                                     android:textStyle="bold"/>
@@ -90,12 +124,21 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:gravity="left"
+                                    android:gravity="center_vertical"
                                     android:textSize="17sp"
                                     android:textColor="#3F6CAF"
-                                    android:layout_marginLeft="5dp"
                                     android:text="20000"/>
                             </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textStyle="bold"
+                                android:textSize="29sp"
+                                android:textColor="#3F6CAF"
+                                android:gravity="center"
+                                android:layout_weight="1"/>
+
+
 
                         </LinearLayout>
 
@@ -105,18 +148,18 @@
             </androidx.cardview.widget.CardView>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="150sp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="5dp"
                 android:layout_weight="1"
                 android:layout_margin="8dp">
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background= "@drawable/gradient_drawable2">
+                    android:background= "@color/white">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -126,6 +169,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:scaleType="fitCenter"
+                            android:layout_margin="10dp"
                             android:src="@drawable/ic_baseline_history_24"
                             app:tint="#3F6CAF" />
                         <TextView
@@ -135,7 +179,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:textColor="#062C65"
+                            android:textColor="#3F6CAF"
                             android:text="Transaction History"
                             />
 
@@ -155,13 +199,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="150sp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="5dp"
                 android:layout_weight="1"
                 android:layout_margin="8dp">
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background= "@drawable/gradient_drawable2">
+                    android:background= "@color/white">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -170,9 +214,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:layout_margin="10dp"
                             android:scaleType="fitCenter"
                             app:tint="#3F6CAF"
-                            android:src="@drawable/ic_baseline_attach_money_24"/>
+                            android:src="@drawable/ic_baseline_send_24"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -180,7 +225,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="18sp"
-                            android:textColor="#0E3570"
+                            android:textColor="#3F6CAF"
                             android:text="Send Money"/>
 
                     </LinearLayout>
@@ -197,7 +242,158 @@
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:layout_gravity="bottom">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:tint="#3F6CAF"
+                                android:src="@drawable/ic_baseline_logout_24"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="#3F6CAF"
+                                android:text="logout"/>
 
+                        </LinearLayout>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"/>
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:tint="#3F6CAF"
+                                android:src="@drawable/ic_baseline_settings_24"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="#3F6CAF"
+                                android:text="settings"/>
+
+                        </LinearLayout>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"/>
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:tint="#3F6CAF"
+                                android:src="@drawable/ic_baseline_perm_phone_msg_24"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="#3F6CAF"
+                                android:text="contact us"/>
+
+                        </LinearLayout>
+                        <Button
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"/>
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                app:tint="#3F6CAF"
+                                android:src="@drawable/ic_baseline_power_settings_new_24"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="#3F6CAF"
+                                android:text="exit"/>
+
+                        </LinearLayout>
+                        <Button
+                            android:id="@+id/exit_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#00000000"/>
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

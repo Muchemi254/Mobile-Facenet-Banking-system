@@ -58,6 +58,7 @@ public class Login extends AppCompatActivity {
                         = new Intent(Login.this,
                         SignUp.class);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -128,6 +129,7 @@ public class Login extends AppCompatActivity {
                                                     Intent intent = new Intent(Login.this, MainActivity.class);
                                                     intent.putExtra("launch_source", "first_activity");
                                                     startActivity(intent);
+                                                    overridePendingTransition(0, 0);
                                                 }
                                             });
                                     AlertDialog alert = builder.create();

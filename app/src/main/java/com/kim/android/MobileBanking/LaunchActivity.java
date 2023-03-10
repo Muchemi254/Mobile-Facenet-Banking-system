@@ -31,6 +31,7 @@ public class LaunchActivity extends AppCompatActivity {
                     public void run() {
                         // Start the main activity
                         startActivity(new Intent(LaunchActivity.this, Login.class));
+                        overridePendingTransition(0, 0);
                         finish();
                     }
                 });

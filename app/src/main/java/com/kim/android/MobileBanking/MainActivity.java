@@ -22,6 +22,7 @@ import android.graphics.RectF;
 import android.graphics.YuvImage;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.InputType;
 import android.util.Log;
 import android.util.Pair;
@@ -447,6 +448,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private Handler handler = new Handler();
+
+    private Runnable authFailedRunnable = new Runnable() {
+        @Override
+        public void run() {
+            // Display the authentication failed alert
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Authentication failed");
+            builder.setPositiveButton("OK", null);
+            builder.show();
+        }
+    };
+
 
     public String recognizeImage(final Bitmap bitmap) {
         // set image to preview
@@ -501,23 +515,44 @@ public class MainActivity extends AppCompatActivity {
 
                 //If distance between Closest found face is more than 1.000 ,then output UNKNOWN face.
                 if(distance<0.800f){
+                    // release the camera resources
+                    unbindAllCameraUseCases();
+                    releaseCamera();
                     loadActivity();
+                    handler.removeCallbacks(authFailedRunnable);
                     return name;
 
                 }
 
-                else
-                    return "unknown";
+                else{
+                    // Schedule a delayed message to display the authentication failed alert after 5 seconds
+                    handler.postDelayed(authFailedRunnable, 5000);
+                    return "unknown";}
             }
         }
+        // Schedule a delayed message to display the authentication failed alert after 5 seconds
+        handler.postDelayed(authFailedRunnable, 5000);
 
         return null;
+    }
+
+    private void unbindAllCameraUseCases() {
+        if (cameraProvider != null) {
+            cameraProvider.unbindAll();
+        }
+    }
+    private void releaseCamera() {
+        if (cameraProvider != null) {
+            unbindAllCameraUseCases();
+            cameraProvider = null;
+        }
     }
 
     private void loadActivity() {
         Intent intent = new Intent(MainActivity.this, BankHome.class);
         finish();
         startActivity(intent);
+        overridePendingTransition(0, 0);
     }
 
     //Compare Faces by distance between face embeddings
