@@ -1,5 +1,7 @@
 package com.kim.android.MobileBanking;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,7 +33,6 @@ public class SignUp extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     private FirebaseAuth auth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +77,11 @@ public class SignUp extends AppCompatActivity {
         reference = rootNode.getReference("users");
         //Get all the values
         String name = regName.getEditText().getText().toString();
-        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String accountNo = regaccountNo.getEditText().getText().toString();
         String email = regEmail.getEditText().getText().toString();
         String phoneNo = regPhoneNo.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
+        String balance = "0";
 
 
         if (TextUtils.isEmpty(email)) {
@@ -108,10 +110,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-
                     Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
-
-
 
                 } else {
                     // Registration failed
@@ -134,9 +133,11 @@ public class SignUp extends AppCompatActivity {
                 }
             }
         });
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = currentUser.getUid();
 
-        UserHelperClass helperClass = new UserHelperClass(name, accountNo, email, phoneNo);
-        reference.child(currentuser).setValue(helperClass);
+        UserHelperClass helperClass = new UserHelperClass(name, accountNo, email, phoneNo, balance);
+        reference.child(userId).setValue(helperClass);
         AlertDialog.Builder builder = new AlertDialog.Builder(SignUp.this);
         builder.setMessage("Registration successful")
                 .setCancelable(false)
@@ -152,17 +153,23 @@ public class SignUp extends AppCompatActivity {
     }
 
     public static class UserHelperClass {
-        String name, accountNo, email, phoneNo;
+        String name;
+        String accountNo;
+        String email;
+        String phoneNo;
+        String balance;
 
         public UserHelperClass() {
         }
-        public UserHelperClass(String name, String accountNo, String email, String phoneNo) {
+        public UserHelperClass(String name, String accountNo, String email, String phoneNo, String balance) {
             this.name = name;
             this.accountNo = accountNo;
             this.email = email;
             this.phoneNo = phoneNo;
+            this.balance = balance;
 
         }
+
 
         public String getName() {
             return name;
@@ -170,6 +177,14 @@ public class SignUp extends AppCompatActivity {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public String getBalance() {
+            return balance;
+        }
+
+        public void setBalance(String balance) {
+            this.balance = balance;
         }
 
         public String getAccountNo() {

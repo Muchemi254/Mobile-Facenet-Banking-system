@@ -35,6 +35,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -119,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         graphicOverlay = findViewById(R.id.graphic_overlay);
         previewImg = findViewById(R.id.preview_img);
         detectionTextView = findViewById(R.id.detection_text);
-        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         //hide register button on face authentication page
         Button addBtn = findViewById(R.id.add_btn);
@@ -408,9 +408,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void saveToFB() {
         // Get a reference to the Firebase Realtime Database
-        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = currentUser.getUid();
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference recognitionRef = database.getReference().child("users").child(currentuser).child("recognition_info");
+        DatabaseReference recognitionRef = database.getReference().child("users").child(userId).child("recognition_info");
 
     // Create a new Gson instance
         Gson gson = new Gson();
@@ -447,35 +449,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    private Handler handler = new Handler();
-
-    private Runnable authFailedRunnable = new Runnable() {
-        @Override
-        public void run() {
-            if (!isFinishing()) {
-            // Display the authentication failed alert
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setMessage("Authentication failed");
-            builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    onBackPressed();
-                }
-            });
-            builder.setPositiveButton("try again", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    recreate();
-                }
-            });
-            builder.setCancelable(false);
-            unbindAllCameraUseCases();
-            releaseCamera();
-            builder.show();
-        }
-        }
-    };
 
     @Override
     public void onBackPressed() {
@@ -550,19 +523,14 @@ public class MainActivity extends AppCompatActivity {
                     unbindAllCameraUseCases();
                     releaseCamera();
                     loadActivity();
-                    handler.removeCallbacks(authFailedRunnable);
                     return name;
 
                 }
 
-                else{
-                    // Schedule a delayed message to display the authentication failed alert after 5 seconds
-                    handler.postDelayed(authFailedRunnable, 5000);
-                    return "unknown";}
+                else{return "unknown";}
             }
         }
-        // Schedule a delayed message to display the authentication failed alert after 5 seconds
-        handler.postDelayed(authFailedRunnable, 5000);
+
 
         return null;
     }

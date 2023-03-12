@@ -23,7 +23,6 @@
                 android:textSize="19dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textStyle="bold"
                 android:textColor="#294B7E"
                 android:layout_margin="10dp"/>
         </LinearLayout>
@@ -69,10 +68,11 @@
                                     app:tint="#3F6CAF" />
 
                                 <TextView
+                                    android:id="@+id/TxtVusername"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:gravity="center_vertical"
+                                    android:gravity="center"
                                     android:textSize="17sp"
                                     android:textColor="#3F6CAF"
                                     android:text="Brian Kimani"/>
@@ -91,12 +91,13 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
+                                    android:gravity="center"
                                     android:text="AccNo:"
                                     android:layout_weight="1"
                                     android:textColor="#3F6CAF"
                                     android:textSize="16sp" />
                                 <TextView
+                                    android:id="@+id/TxtVaccNo"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
@@ -119,12 +120,13 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
+                                    android:gravity="center"
                                     android:text="Balance:"
                                     android:layout_weight="1"
                                     android:textColor="#3F6CAF"
                                     android:textSize="16sp"/>
                                 <TextView
+                                    android:id="@+id/TxtVbalance"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
